@@ -1,0 +1,126 @@
+/* ==========================================================================
+   BAND SECTION STYLES (band.css)
+   ========================================================================== */
+
+/* 1. Reset & Base Styles cho Section */
+.band-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+}
+
+.band-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 2. Tiêu đề và Giới thiệu ngắn */
+.band-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+.band-subtitle {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #777777;
+    margin-bottom: 25px;
+}
+
+.band-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    text-align: justify;
+    color: #555555;
+}
+
+/* 3. Danh sách thành viên (Grid Layout) */
+.member-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* 4. Thẻ thành viên (Member Card) */
+.member-item {
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng hover cho thẻ */
+.member-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Khung chứa ảnh để đảm bảo ảnh đồng đều */
+.member-img-wrapper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giúp ảnh không bị méo */
+    transition: transform 0.5s ease;
+}
+
+.member-item:hover .member-img {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
+
+/* Thông tin thành viên */
+.member-info {
+    padding: 20px;
+}
+
+.member-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #222222;
+}
+
+.member-role {
+    font-size: 0.95rem;
+    color: #007bff; /* Màu sắc tạo điểm nhấn cho vị trí */
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   Responsive (Tối ưu cho thiết bị nhỏ)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .band-section {
+        padding: 50px 15px;
+    }
+
+    .band-title {
+        font-size: 2rem;
+    }
+
+    .band-description {
+        text-align: left; /* Trên mobile để căn lề trái cho dễ đọc */
+        margin-bottom: 40px;
+    }
+    
+    .member-img-wrapper {
+        height: 350px; /* Tăng chiều cao ảnh một chút trên mobile */
+    }
+}
